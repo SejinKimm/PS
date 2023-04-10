@@ -21,26 +21,26 @@ for problem_num in f:
     # 문제 이름
     value = soup.find("span", {"id": "problem_title"})
     title = str(value).split(">")[1].split("<")[0]
-    text += "문제 이름\n{title}\n\n"
+    text += "문제 이름\n%s\n\n" % title
     st.write("%s %s" % (problem_num, title))
     #print(title)
 
     # 문제 내용
     value = soup.find("div", {"id": "problem_description"})
     maintext = str(value).split("<p>")[1].split("</p>")[0]
-    text += "문제 내용\n{maintext}\n\n"
+    text += "문제 내용\n%s\n\n" % maintext
     #print(maintext)
 
     # 문제 입력 설명
     value = soup.find("div", {"id": "problem_input"})
     inputtext = str(value).split("<p>")[1].split("</p>")[0]
-    text += "문제 입력\n{inputtext}\n\n"
+    text += "문제 입력\n%s\n\n" % inputtext
     #print(inputtext)
 
     # 문제 출력 설명
     value = soup.find("div", {"id": "problem_output"})
     outputtext = str(value).split("<p>")[1].split("</p>")[0]
-    text += "문제 출력\n{outputtext}\n\n"
+    text += "문제 출력\n%s\n\n" % outputtext
     #print(outputtext)
 
     # 예제 입력 & 출력
@@ -63,8 +63,8 @@ for problem_num in f:
             outputsample = str(value).split(">")[1].split("<")[0]
 
         if chk < 2:
-            text += "예제 입력{i}\n{inputsample}\n\n"
-            text += "예제 출력{i}\n{outputsample}\n\n"
+            text += "예제 입력%d\n%s\n\n" % (i, inputsample)
+            text += "예제 출력%d\n%s\n\n" % (i, outputsample)
             #print(inputsample)
             #print(outputsample)
 
