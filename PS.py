@@ -21,6 +21,10 @@ for no in f:
     print(title)
     st.write("#TITLE: %s" % title)
 
+    g = open("{title}.txt", 'w')
+    g.write("test")
+    g.close()
+
     # 문제 내용
     value = soup.find("div", {"id": "problem_description"})
     maintext = str(value).split("<p>")[1].split("</p>")[0]
@@ -61,7 +65,7 @@ for no in f:
 
         i += 1
 
-    generate_download_button(label=title, data=f, file_name=title)
+    generate_download_button(label=title, data=g, file_name=title)
 
     # 분류
     #value = soup.find("a", {"class": "spoiler-link"})
