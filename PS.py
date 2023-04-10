@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import streamlit as st
 
 def generate_download_button(label, data, file_name):
-    st.download_button(label=f"Download {label} as txt",
+    st.download_button(label=f'Download "{label}"',
                            data=data,
                            file_name=f"{file_name}.txt")
 
@@ -61,7 +61,7 @@ for no in f:
 
         i += 1
 
-    generate_download_button(label=title, data=f, file_name='%s.txt' % title)
+    generate_download_button(label=title, data=f, file_name=title)
 
     # 분류
     #value = soup.find("a", {"class": "spoiler-link"})
