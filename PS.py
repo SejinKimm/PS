@@ -1,5 +1,6 @@
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
+import streamlit as st
 
 f = open("PS.txt", 'r')
 
@@ -12,6 +13,7 @@ for no in f:
     value = soup.find("span", {"id": "problem_title"})
     title = str(value).split(">")[1].split("<")[0]
     print(title)
+    st.write("#TITLE: %s" % title)
 
     # 문제 내용
     value = soup.find("div", {"id": "problem_description"})
