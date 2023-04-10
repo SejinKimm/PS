@@ -70,7 +70,7 @@ for problem_num in f:
 
         i += 1
 
-    generate_download_button(label=title, data=maintext, file_name=title)
+    generate_download_button(label=title, data=text, file_name=title)
 
     # 분류
     #value = soup.find("a", {"class": "spoiler-link"})
