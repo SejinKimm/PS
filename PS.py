@@ -56,7 +56,7 @@ for no in f:
 
         i += 1
 
-    #st.download_button('Download Problem', f)
+    st.download_button(title, f)
 
     # 분류
     #value = soup.find("a", {"class": "spoiler-link"})
