@@ -65,7 +65,9 @@ for no in f:
 
         i += 1
 
+    g = open("{title}.txt", 'r')
     generate_download_button(label=title, data=g, file_name=title)
+    g.close()
 
     # 분류
     #value = soup.find("a", {"class": "spoiler-link"})
