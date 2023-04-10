@@ -10,9 +10,9 @@ def generate_download_button(label, data, file_name):
 f = open("PS.txt", 'r')
 st.write("# Coding Test Problem Downloader")
 
-for no in f:
-    no = no.rstrip()
-    url = Request("https://www.acmicpc.net/problem/%s" % no, headers={'User-Agent': 'Mozilla/5.0'})
+for problem_num in f:
+    problem_num = problem_num.rstrip()
+    url = Request("https://www.acmicpc.net/problem/%s" % problem_num, headers={'User-Agent': 'Mozilla/5.0'})
     response = urlopen(url).read()
     soup = BeautifulSoup(response, "html.parser")
 
@@ -22,7 +22,7 @@ for no in f:
     value = soup.find("span", {"id": "problem_title"})
     title = str(value).split(">")[1].split("<")[0]
     text += "문제 이름\n{title}\n\n"
-    st.write("%s %s" % (no, title))
+    st.write("%s %s" % (problem_num, title))
     #print(title)
 
     # 문제 내용
