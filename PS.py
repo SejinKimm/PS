@@ -22,7 +22,7 @@ for problem_num in f:
     value = soup.find("span", {"id": "problem_title"})
     title = str(value).split(">")[1].split("<")[0]
     text += "문제 이름\n%s\n\n" % title.lstrip()
-    st.write("%s %s" % (problem_num, title))
+    st.write("[%s] %s" % (problem_num, title))
     #print(title)
 
     # 문제 내용
