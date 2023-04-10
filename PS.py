@@ -2,6 +2,11 @@ from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
 import streamlit as st
 
+def generate_download_button(label, data, file_name):
+    st.download_button(label=f"Download {label} as txt",
+                           data=data,
+                           file_name=f"{file_name}.txt")
+
 f = open("PS.txt", 'r')
 st.write('Hello, *World!* :sunglasses:')
 
@@ -56,7 +61,7 @@ for no in f:
 
         i += 1
 
-    st.download_button(label=title, data=f, file_name='%s.txt' % title)
+    generate_download_button(label=title, data=f, file_name='%s.txt' % title)
 
     # 분류
     #value = soup.find("a", {"class": "spoiler-link"})
