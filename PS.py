@@ -49,14 +49,14 @@ for problem_num in f:
     while chk != 2:
         chk = 0
         value = soup.find("pre", {"id": "sample-input-%d" % i})
-        if value == None:
+        if value is None:
             chk += 1
             inputsample = "없음"
         else:
             inputsample = str(value).split(">")[1].split("<")[0]
 
         value = soup.find("pre", {"id": "sample-output-%d" % i})
-        if value == None:
+        if value is None:
             chk += 1
             outputsample = "없음"
         else:
